@@ -31,30 +31,33 @@ Enterprise-ready hybrid automation framework for **UI and API testing** using **
 ---
 
 ## 📁 Project Structure
+cypress-hybrid-framework/
+## 📁 Project Structure
 
+```text
 cypress-hybrid-framework/
 │
-├── ui-automation/ # Cypress UI tests
-│ ├── cypress/
-│ │ ├── e2e/
-│ │ ├── pages/
-│ │ └── support/
-│ └── cypress.config.js
+├── ui-automation/                # Cypress UI tests
+│   ├── cypress/
+│   │   ├── e2e/
+│   │   ├── pages/
+│   │   └── support/
+│   └── cypress.config.js
 │
-├── api-automation/ # API automation (TestNG)
-│ ├── src/test/java/
-│ └── pom.xml
+├── api-automation/               # API automation (TestNG)
+│   ├── src/test/java/
+│   └── pom.xml
 │
-├── allure-results/ # Runtime generated (ignored)
-│ ├── ui/
-│ ├── api/
-│ └── merged/
+├── allure-results/               # Runtime generated (ignored)
+│   ├── ui/
+│   ├── api/
+│   └── merged/
 │
-├── allure-report-ui/ # UI-only report (generated)
-├── allure-report-api/ # API-only report (generated)
-├── allure-report-unified/ # Unified report (generated)
+├── allure-report-ui/             # UI-only report (generated)
+├── allure-report-api/            # API-only report (generated)
+├── allure-report-unified/        # Unified report (generated)
 │
-├── run-allure.sh # One-command execution script
+├── run-allure.sh                 # One-command execution script
 ├── .gitignore
 └── README.md
 
