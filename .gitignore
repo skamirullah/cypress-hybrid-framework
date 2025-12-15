@@ -1,0 +1,36 @@
+# =========================
+# Node / Cypress
+# =========================
+node_modules/
+npm-debug.log*
+yarn.lock
+
+# Cypress videos & screenshots
+ui-automation/cypress/videos/
+ui-automation/cypress/screenshots/
+
+# =========================
+# Java / Maven
+# =========================
+target/
+*.log
+
+# =========================
+# Allure
+# =========================
+allure-results/
+allure-report*/
+.allure-history/
+
+# =========================
+# IDE / OS
+# =========================
+.idea/
+.vscode/
+.DS_Store
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
