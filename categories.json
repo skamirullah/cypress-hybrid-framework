@@ -1,0 +1,22 @@
+[
+  {
+    "name": "UI Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*UI.*"
+  },
+  {
+    "name": "API Failures",
+    "matchedStatuses": ["failed"],
+    "messageRegex": ".*API.*"
+  },
+  {
+    "name": "Assertion Errors",
+    "matchedStatuses": ["failed"],
+    "traceRegex": ".*AssertionError.*"
+  },
+  {
+    "name": "Environment Issues",
+    "matchedStatuses": ["broken"],
+    "messageRegex": ".*(timeout|connection|network).*"
+  }
+]

@@ -12,7 +12,7 @@ describe("Login Test", () => {
   it("Valid Login", () => {
     cy.visit("/");
     LoginPage.login("standard_user", "secret_sauce");
-    cy.url().should("include", "/inventory");
+    cy.url().should("include", "/inventories");
   });
 
 });

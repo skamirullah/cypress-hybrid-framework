@@ -1,0 +1,87 @@
+name: Hybrid Automation CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-and-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ---------------------------
+      # Checkout Code
+      # ---------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ---------------------------
+      # Setup Node (Cypress)
+      # ---------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # ---------------------------
+      # Setup Java (TestNG)
+      # ---------------------------
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 11
+
+      # ---------------------------
+      # Install Allure CLI
+      # ---------------------------
+      - name: Install Allure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -zxvf allure-2.27.0.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+          allure --version
+
+      # ---------------------------
+      # Install UI dependencies
+      # ---------------------------
+      - name: Install UI dependencies
+        run: |
+          cd ui-automation
+          npm install
+
+      # ---------------------------
+      # Run tests & generate reports
+      # ---------------------------
+      - name: Run automation & generate Allure reports
+        run: |
+          chmod +x run-allure.sh
+          ./run-allure.sh
+          ./run-allure.sh   # second run for Trend
+
+      # ---------------------------
+      # Upload Allure Reports (Artifacts)
+      # ---------------------------
+      - name: Upload Unified Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-unified
+          path: allure-report-unified
+
+      - name: Upload UI Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-ui
+          path: allure-report-ui
+
+      - name: Upload API Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-api
+          path: allure-report-api
