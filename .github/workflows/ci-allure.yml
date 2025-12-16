@@ -111,21 +111,49 @@ jobs:
         with:
           name: allure-report-unified
           path: allure-report-unified
-    
-      # ---------------------------
-      # Upload UI Allure Reports (Artifacts)
-      # ---------------------------
+
       - name: Upload UI Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report-ui
           path: allure-report-ui
 
-    # ---------------------------
-      # Upload API Allure Reports (Artifacts)
-      # ---------------------------
-      - name: Upload Unified Allure Report
+      - name: Upload API Allure Report
         uses: actions/upload-artifact@v4
         with:
           name: allure-report-api
           path: allure-report-api
+
+  deploy-pages:
+    name: Publish Unified Allure Report to GitHub Pages
+    needs: test-and-report
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      # ---------------------------
+      # Checkout Repository
+      # ---------------------------
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ---------------------------
+      # Download Unified Report
+      # ---------------------------
+      - name: Download Unified Allure Report
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report-unified
+          path: public
+
+      # ---------------------------
+      # Deploy to GitHub Pages
+      # ---------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
+          publish_branch: gh-pages
