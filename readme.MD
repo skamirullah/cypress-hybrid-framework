@@ -142,7 +142,7 @@ Reports auto-publish to GitHub Pages after each run:
 ## Author
 
 **Sk Amir Ullah**  
-Senior QA & Automation Engineer | Founder, KnowMinds
+SDET Lead | Test Automation Expert | Founder, KnowMinds
 
 ---
 
