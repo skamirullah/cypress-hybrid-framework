@@ -91,9 +91,13 @@ allure open allure-report-api
 
 Reports auto-publish to GitHub Pages after each run:
 
-- **Unified**: https://skamirullah.github.io/cypress-hybrid-framework/unified/
+- **Unified**:
+https://skamirullah.github.io/cypress-hybrid-framework/unified/
+![Unified Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/unified.png)
 - **UI**: https://skamirullah.github.io/cypress-hybrid-framework/ui/
+![UI Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/ui.png)
 - **API**: https://skamirullah.github.io/cypress-hybrid-framework/api/
+![API Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/api.png)
 
 ---
 
