@@ -125,7 +125,7 @@ jobs:
           path: allure-report-api
 
   deploy-pages:
-    name: Publish Unified Allure Report to GitHub Pages
+    name: Publish Allure Report to GitHub Pages
     needs: test-and-report
     runs-on: ubuntu-latest
 
@@ -133,27 +133,79 @@ jobs:
       contents: write
 
     steps:
-      # ---------------------------
-      # Checkout Repository
-      # ---------------------------
-      - name: Checkout code
-        uses: actions/checkout@v4
+        # ---------------------------
+        # Checkout Repository
+        # ---------------------------
+        - name: Checkout code
+          uses: actions/checkout@v4
 
-      # ---------------------------
-      # Download Unified Report
-      # ---------------------------
-      - name: Download Unified Allure Report
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-report-unified
-          path: public
+        # ---------------------------
+        # Download all reports
+        # ---------------------------
+        - name: Download Unified Report
+          uses: actions/download-artifact@v4
+          with:
+            name: allure-report-unified
+            path: public/unified
 
-      # ---------------------------
-      # Deploy to GitHub Pages
-      # ---------------------------
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-          publish_branch: gh-pages
+        - name: Download UI Report
+          uses: actions/download-artifact@v4
+          with:
+            name: allure-report-ui
+            path: public/ui
+
+        - name: Download API Report
+          uses: actions/download-artifact@v4
+          with:
+            name: allure-report-api
+            path: public/api
+
+        # ---------------------------
+        # Create HTML redirect files
+        # ---------------------------
+        - name: Create report redirect pages
+          run: |
+            mkdir -p public
+
+            cat <<EOF > public/unified-report.html
+            <html>
+              <head>
+                <meta http-equiv="refresh" content="0; url=./unified/">
+              </head>
+              <body>
+                Redirecting to Unified Allure Report...
+              </body>
+            </html>
+            EOF
+
+            cat <<EOF > public/ui-report.html
+            <html>
+              <head>
+                <meta http-equiv="refresh" content="0; url=./ui/">
+              </head>
+              <body>
+                Redirecting to UI Allure Report...
+              </body>
+            </html>
+            EOF
+
+            cat <<EOF > public/api-report.html
+            <html>
+              <head>
+                <meta http-equiv="refresh" content="0; url=./api/">
+              </head>
+              <body>
+                Redirecting to API Allure Report...
+              </body>
+            </html>
+            EOF
+
+        # ---------------------------
+        # Deploy to GitHub Pages
+        # ---------------------------
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: public
+            publish_branch: gh-pages
