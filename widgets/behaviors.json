@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"0d93353e393fe7daa83b078aa37e763c","name":"ui-automation","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"108b1b344189dfe9cb2af7ce737cd83e","name":"api-automation","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
