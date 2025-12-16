@@ -1,25 +1,45 @@
 name: Hybrid Automation CI
 
+# --------------------------------------------------
+# IMPORTANT:
+# Cron runs in UTC
+# 18:00 UTC = 11:30 PM IST
+# --------------------------------------------------
+
 on:
   push:
     branches: [ main ]
+
   pull_request:
     branches: [ main ]
+
+  schedule:
+    - cron: "0 18 * * *"   # Daily at 11:30 PM IST
+
   workflow_dispatch:
+
+# --------------------------------------------------
+# REQUIRED PERMISSIONS FOR GITHUB PAGES
+# --------------------------------------------------
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   test-and-report:
+    name: Run UI + API Tests & Generate Allure Reports
     runs-on: ubuntu-latest
 
     steps:
       # ---------------------------
-      # Checkout Code
+      # Checkout Repository
       # ---------------------------
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       # ---------------------------
-      # Setup Node (Cypress)
+      # Setup Node (Cypress-safe)
       # ---------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,23 +47,31 @@ jobs:
           node-version: 18.18.2
 
       # ---------------------------
-      # Cache Cypress binary - To avoid re-downloading on every run
+      # Cache Cypress Binary
       # ---------------------------
-
-      - name: Cache Cypress binary
+      - name: Cache Cypress
         uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-${{ hashFiles('ui-automation/package-lock.json') }}
 
       # ---------------------------
-      # Setup Java (TestNG)
+      # Setup Java (Maven-safe)
       # ---------------------------
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 11
+
+      # ---------------------------
+      # Verify Tool Versions
+      # ---------------------------
+      - name: Verify versions
+        run: |
+          node -v
+          java -version
+          mvn -version
 
       # ---------------------------
       # Install Allure CLI
@@ -59,7 +87,7 @@ jobs:
           allure --version
 
       # ---------------------------
-      # Install UI dependencies
+      # Install UI Dependencies
       # ---------------------------
       - name: Install UI dependencies
         run: |
@@ -67,13 +95,13 @@ jobs:
           npm install
 
       # ---------------------------
-      # Run tests & generate reports
+      # Run Tests & Generate Reports
       # ---------------------------
-      - name: Run automation & generate Allure reports
+      - name: Run automation and generate Allure reports
         run: |
           chmod +x run-allure.sh
           ./run-allure.sh
-          ./run-allure.sh   # second run for Trend
+          ./run-allure.sh   # second run required for Trend
 
       # ---------------------------
       # Upload Allure Reports (Artifacts)
@@ -81,41 +109,4 @@ jobs:
       - name: Upload Unified Allure Report
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-unified
-          path: allure-report-unified
-
-      - name: Upload UI Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-ui
-          path: allure-report-ui
-
-      - name: Upload API Allure Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-api
-          path: allure-report-api
-
-  deploy-pages:
-    needs: test-and-report
-    runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download Unified Allure Report
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-report-unified
-          path: public
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-          publish_branch: gh-pages
+          name: allure-report-un
