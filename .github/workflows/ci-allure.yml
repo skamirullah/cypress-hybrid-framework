@@ -99,12 +99,15 @@ jobs:
   deploy-pages:
     needs: test-and-report
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download Allure Report Artifact
+      - name: Download Unified Allure Report
         uses: actions/download-artifact@v4
         with:
           name: allure-report-unified
@@ -113,6 +116,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.SECRET_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
-  
+          publish_branch: gh-pages
