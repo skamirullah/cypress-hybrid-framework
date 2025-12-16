@@ -87,17 +87,36 @@ allure open allure-report-api
 - Tests run daily at 11:30 PM IST via GitHub Actions
 - Scheduled nightly regression coverage
 
-**Live Dashboards**
+## Live Allure Report Dashboards
 
 Reports auto-publish to GitHub Pages after each run:
 
-- **Unified**:
-https://skamirullah.github.io/cypress-hybrid-framework/unified/
+### Unified Report (UI + API Combined)
+
+
+**Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/unified/
+
 ![Unified Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/unified.png)
-- **UI**: https://skamirullah.github.io/cypress-hybrid-framework/ui/
+
+---
+
+### UI Automation Report
+
+**Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/ui/
+
 ![UI Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/ui.png)
-- **API**: https://skamirullah.github.io/cypress-hybrid-framework/api/
+
+---
+
+### API Automation Report
+
+**Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/api/
+
 ![API Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/api.png)
+
+---
+
+> **Note**: All reports are automatically updated after each scheduled test execution.
 
 ---
 
