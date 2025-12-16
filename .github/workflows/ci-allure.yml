@@ -199,7 +199,28 @@ jobs:
               </body>
             </html>
             EOF
+      
+        - name: Capture Allure homepage screenshots
+          run: |
+            sudo apt-get install -y chromium-browser
+            mkdir -p public/screenshots
 
+            chromium-browser --headless --disable-gpu \
+              --screenshot=public/screenshots/unified.png \
+              --window-size=1920,1080 \
+              https://skamirullah.github.io/cypress-hybrid-framework/unified/
+
+            chromium-browser --headless --disable-gpu \
+              --screenshot=public/screenshots/ui.png \
+              --window-size=1920,1080 \
+              https://skamirullah.github.io/cypress-hybrid-framework/ui/
+
+            chromium-browser --headless --disable-gpu \
+              --screenshot=public/screenshots/api.png \
+              --window-size=1920,1080 \
+              https://skamirullah.github.io/cypress-hybrid-framework/api/
+
+            
         # ---------------------------
         # Deploy to GitHub Pages
         # ---------------------------
