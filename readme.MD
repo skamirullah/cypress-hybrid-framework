@@ -164,24 +164,58 @@ This framework is designed to work seamlessly with:
 Reports can be published as:
 - Downloadable Allure artifacts
 - GitHub Pages dashboards
+## 🚀 CI/CD Integration with GitHub Actions
 
-## 🧹 Git Hygiene
+This automation framework is fully integrated with **GitHub Actions** to enable **continuous, unattended execution**.
 
-The following files/folders are intentionally ignored:
-- `node_modules`
-- `target`
-- `allure-results`
-- `allure-report-*`
-- `.allure-history`
+### ⏱️ Scheduled Execution
 
-Refer to `.gitignore` for details.
+- Tests are executed **daily at 11:30 PM IST**
+- Scheduling is managed using GitHub Actions cron (UTC-based)
+- Execution runs regardless of code changes, ensuring **nightly regression coverage**
 
-## 🧠 Design Philosophy
+### 📊 Report Publishing
 
-- Result-level separation (UI / API)
-- Report-level aggregation (Unified)
-- No test re-runs for multiple dashboards
-- Simple execution with advanced reporting
+- All test executions automatically generate **Allure HTML reports**
+- Reports are published to the **`gh-pages` branch**
+- The latest reports are always accessible via GitHub Pages
+
+---
+
+## 📊 Allure Report Dashboards
+
+### 🔹 Unified Report (UI + API)
+
+Consolidated dashboard combining **UI and API automation results** for QA leads and stakeholders.
+
+https://skamirullah.github.io/cypress-hybrid-framework/unified/
+
+---
+
+### 🔹 UI Automation Report
+
+Dedicated Allure dashboard for **Cypress UI automation**, intended for frontend and UI teams.
+
+https://skamirullah.github.io/cypress-hybrid-framework/ui/
+
+---
+
+### 🔹 API Automation Report
+
+Focused Allure dashboard for **TestNG API automation**, intended for backend and integration teams.
+
+https://skamirullah.github.io/cypress-hybrid-framework/api/
+
+---
+
+### ✅ Key Benefits
+
+- Single source of truth for test execution results
+- Clear separation of **UI**, **API**, and **Unified** views
+- Manager-friendly dashboards hosted on GitHub Pages
+- No manual report generation or deployment required
+
+> All reports are automatically updated after each scheduled or manual pipeline execution
 
 ## 🤝 Contribution
 
