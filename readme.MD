@@ -96,15 +96,14 @@ Reports auto-publish to GitHub Pages after each run:
 
 **Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/unified/
 
-![Unified Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/unified.png)
+![Unified Allure Report](screenshots/UI-And-API-Allure-Report.png)
 
 ---
 
 ### UI Automation Report
 
 **Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/ui/
-
-![UI Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/ui.png)
+![UI Allure Report](screenshots/UI-Allure-Report.png)
 
 ---
 
@@ -112,7 +111,7 @@ Reports auto-publish to GitHub Pages after each run:
 
 **Access Report**: https://skamirullah.github.io/cypress-hybrid-framework/api/
 
-![API Allure Report](https://skamirullah.github.io/cypress-hybrid-framework/screenshots/api.png)
+![API Allure Report](screenshots/API-Allure-Report.png)
 
 ---
 

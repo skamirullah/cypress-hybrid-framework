@@ -1,22 +1,44 @@
 [
   {
     "name": "UI Failures",
-    "matchedStatuses": ["failed"],
+    "matchedStatuses": [
+      "failed"
+    ],
     "messageRegex": ".*UI.*"
   },
   {
     "name": "API Failures",
-    "matchedStatuses": ["failed"],
+    "matchedStatuses": [
+      "failed"
+    ],
     "messageRegex": ".*API.*"
   },
   {
+    "name": "API Contract Issues",
+    "matchedStatuses": [
+      "failed"
+    ],
+    "messageRegex": ".*schema.*"
+  },
+  {
+    "name": "Validation Errors",
+    "matchedStatuses": [
+      "failed"
+    ],
+    "messageRegex": ".*Expected.*"
+  },
+  {
     "name": "Assertion Errors",
-    "matchedStatuses": ["failed"],
+    "matchedStatuses": [
+      "failed"
+    ],
     "traceRegex": ".*AssertionError.*"
   },
   {
     "name": "Environment Issues",
-    "matchedStatuses": ["broken"],
+    "matchedStatuses": [
+      "broken"
+    ],
     "messageRegex": ".*(timeout|connection|network).*"
   }
 ]

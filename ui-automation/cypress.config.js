@@ -1,9 +1,10 @@
 const { defineConfig } = require("cypress");
 const allureWriter = require("@shelex/cypress-allure-plugin/writer");
+const envConfig = require("./cypress/support/env");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://saucedemo.com",
+    baseUrl: envConfig.ui.baseUrl,
     viewportWidth: 1280,
     viewportHeight: 720,
     setupNodeEvents(on, config) {
