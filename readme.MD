@@ -115,10 +115,6 @@ Reports auto-publish to GitHub Pages after each run:
 
 ---
 
-> **Note**: All reports are automatically updated after each scheduled test execution.
-
----
-
 ## Key Features
 
 - Single command execution for UI + API tests
