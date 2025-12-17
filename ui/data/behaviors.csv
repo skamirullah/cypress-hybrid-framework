@@ -1,4 +1,4 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
-"ui-automation","Cart Module","Cart Page - Checkout Cart","0","0","1","0","0"
 "ui-automation","Inventory Module","Home Page - Product listing","0","0","1","0","0"
 "ui-automation","Login Module","Valid login","0","0","1","0","0"
+"ui-automation","Cart Module","Cart Page - Checkout Cart","0","0","1","0","0"
