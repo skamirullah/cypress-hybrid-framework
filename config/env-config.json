@@ -1,0 +1,26 @@
+{
+    "qa": {
+        "ui": {
+            "baseUrl": "https://naveenautomationlabs.com/opencart"
+        },
+        "api": {
+            "baseUrl": "http://216.10.245.166"
+        }
+    },
+    "uat": {
+        "ui": {
+            "baseUrl": "https://naveenautomationlabs.com/opencart-uat"
+        },
+        "api": {
+            "baseUrl": "http://216.10.245.166"
+        }
+    },
+    "prod": {
+        "ui": {
+            "baseUrl": "https://naveenautomationlabs.com/opencart-prod"
+        },
+        "api": {
+            "baseUrl": "http://216.10.245.166"
+        }
+    }
+}

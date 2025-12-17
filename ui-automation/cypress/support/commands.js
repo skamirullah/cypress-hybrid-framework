@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("loginSession", () => {
+    cy.session(
+        "validUser",
+        () => {
+            cy.fixture("users").then(({ validUser }) => {
+
+                cy.visit("/index.php?route=account/login");
+
+                cy.get("#input-email").type(validUser.username);
+                cy.get("#input-password").type(validUser.password);
+                cy.get("input[value='Login']").click();
+
+                cy.url().should("include", "account/account");
+                cy.getCookie("OCSESSID").should("exist");
+            });
+        },
+        {
+            validate() {
+                cy.getCookie("OCSESSID").should("exist");
+            }
+        }
+    );
+});
