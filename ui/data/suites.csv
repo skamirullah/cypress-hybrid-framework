@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Jan 24 18:19:07 UTC 2026","Sat Jan 24 18:19:12 UTC 2026","5441","","UI Automation Suite","","","","should check cart for empty",""
+"passed","Sat Jan 24 18:19:20 UTC 2026","Sat Jan 24 18:19:24 UTC 2026","4289","","UI Automation Suite","","","","should login successfully with valid credentials",""
+"passed","Sat Jan 24 18:19:14 UTC 2026","Sat Jan 24 18:19:18 UTC 2026","4373","","UI Automation Suite","","","","should search the product",""
