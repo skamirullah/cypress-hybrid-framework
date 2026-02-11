@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Wed Feb 11 18:51:37 UTC 2026","Wed Feb 11 18:51:45 UTC 2026","8516","","UI Automation Suite","","","","should check cart for empty",""
+"broken","Wed Feb 11 18:51:57 UTC 2026","Wed Feb 11 18:52:04 UTC 2026","7447","","UI Automation Suite","","","","should login successfully with valid credentials",""
+"broken","Wed Feb 11 18:51:47 UTC 2026","Wed Feb 11 18:51:55 UTC 2026","8135","","UI Automation Suite","","","","should search the product",""
