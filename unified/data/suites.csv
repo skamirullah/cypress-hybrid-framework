@@ -1,2 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Fri May 08 19:22:33 UTC 2026","Fri May 08 19:22:34 UTC 2026","1387","API Automation Suite","Book API Tests","com.skamirullah.tests.AddBookTest","com.skamirullah.tests.AddBookTest","shouldAddBookSuccessfully","Verify user can add a book successfully",""
+"broken","Sat May 09 18:50:33 UTC 2026","Sat May 09 18:50:41 UTC 2026","8097","","UI Automation Suite","","","","should search the product",""
+"broken","Sat May 09 18:50:43 UTC 2026","Sat May 09 18:50:51 UTC 2026","8035","","UI Automation Suite","","","","should login successfully with valid credentials",""
+"broken","Sat May 09 18:50:24 UTC 2026","Sat May 09 18:50:32 UTC 2026","8053","","UI Automation Suite","","","","should check cart for empty",""
+"failed","Sat May 09 18:50:56 UTC 2026","Sat May 09 18:50:57 UTC 2026","1263","API Automation Suite","Book API Tests","com.skamirullah.tests.AddBookTest","com.skamirullah.tests.AddBookTest","shouldAddBookSuccessfully","Verify user can add a book successfully",""
