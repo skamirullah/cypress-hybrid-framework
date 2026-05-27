@@ -1,1 +1,1 @@
-[]
+[{"uid":"edbdd27e341eeb76","name":"should search the product","time":{"start":1779912161690,"stop":1779912169598,"duration":7908},"status":"broken","severity":"normal"},{"uid":"5453369328700953","name":"should check cart for empty","time":{"start":1779912151855,"stop":1779912160053,"duration":8198},"status":"broken","severity":"normal"},{"uid":"d06e30618fd79605","name":"should login successfully with valid credentials","time":{"start":1779912171275,"stop":1779912179497,"duration":8222},"status":"broken","severity":"normal"}]
