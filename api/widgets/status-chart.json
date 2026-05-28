@@ -1,1 +1,1 @@
-[{"uid":"7b81328e020fcc41","name":"Verify user can add a book successfully","time":{"start":1779912184066,"stop":1779912319892,"duration":135826},"status":"broken","severity":"critical"}]
+[{"uid":"c3b4d29ca68053a8","name":"Verify user can add a book successfully","time":{"start":1779999014357,"stop":1779999015554,"duration":1197},"status":"failed","severity":"critical"}]
