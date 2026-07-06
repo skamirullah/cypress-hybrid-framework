@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Sun Jul 05 19:03:35 UTC 2026","Sun Jul 05 19:03:36 UTC 2026","1271","API Automation Suite","Book API Tests","com.skamirullah.tests.AddBookTest","com.skamirullah.tests.AddBookTest","shouldAddBookSuccessfully","Verify user can add a book successfully",""
+"failed","Mon Jul 06 19:43:01 UTC 2026","Mon Jul 06 19:43:02 UTC 2026","1267","API Automation Suite","Book API Tests","com.skamirullah.tests.AddBookTest","com.skamirullah.tests.AddBookTest","shouldAddBookSuccessfully","Verify user can add a book successfully",""
