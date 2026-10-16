@@ -1,4 +1,4 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"broken","Thu Oct 15 20:43:24 UTC 2026","Thu Oct 15 20:43:32 UTC 2026","7607","","UI Automation Suite","","","","should login successfully with valid credentials",""
-"broken","Thu Oct 15 20:43:15 UTC 2026","Thu Oct 15 20:43:23 UTC 2026","7557","","UI Automation Suite","","","","should search the product",""
-"broken","Thu Oct 15 20:43:06 UTC 2026","Thu Oct 15 20:43:14 UTC 2026","8479","","UI Automation Suite","","","","should check cart for empty",""
+"broken","Fri Oct 16 20:18:22 UTC 2026","Fri Oct 16 20:18:29 UTC 2026","7313","","UI Automation Suite","","","","should search the product",""
+"broken","Fri Oct 16 20:18:13 UTC 2026","Fri Oct 16 20:18:20 UTC 2026","7526","","UI Automation Suite","","","","should login successfully with valid credentials",""
+"broken","Fri Oct 16 20:18:03 UTC 2026","Fri Oct 16 20:18:11 UTC 2026","8132","","UI Automation Suite","","","","should check cart for empty",""
